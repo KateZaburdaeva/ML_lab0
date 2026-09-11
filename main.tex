@@ -1,0 +1,249 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[english, russian]{babel}
+\usepackage[T1, T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{import}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tabu}
+\usepackage{booktabs}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks]{hyperref}
+\usepackage{indentfirst}
+\usepackage{listings}
+
+\renewcommand{\baselinestretch}{1.5}
+\setlength{\parindent}{1.25cm}
+
+\geometry{left=2cm, right=2cm, bottom=2cm, top=2cm}
+
+\hypersetup{
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{codestyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    inputencoding=utf8,
+    extendedchars=true,
+    literate=
+    {а}{{\cyra}}1 {б}{{\cyrb}}1 {в}{{\cyrv}}1 {г}{{\cyrg}}1
+    {д}{{\cyrd}}1 {е}{{\cyre}}1 {ё}{{\cyre}}1 {ж}{{\cyrzh}}1 {з}{{\cyrz}}1
+    {и}{{\cyri}}1 {й}{{\cyrishrt}}1 {к}{{\cyrk}}1 {л}{{\cyrl}}1
+    {м}{{\cyrm}}1 {н}{{\cyrn}}1 {о}{{\cyro}}1 {п}{{\cyrp}}1
+    {р}{{\cyrr}}1 {с}{{\cyrs}}1 {т}{{\cyrt}}1 {у}{{\cyru}}1
+    {ф}{{\cyrf}}1 {х}{{\cyrh}}1 {ц}{{\cyrc}}1 {ч}{{\cyrch}}1
+    {ш}{{\cyrsh}}1 {щ}{{\cyrshch}}1 {ъ}{{\cyrhrdsn}}1 {ы}{{\cyrery}}1
+    {ь}{{\cyrsftsn}}1 {э}{{\cyrerev}}1 {ю}{{\cyryu}}1 {я}{{\cyrya}}1
+    {А}{{\CYRA}}1 {Б}{{\CYRB}}1 {В}{{\CYRV}}1 {Г}{{\CYRG}}1
+    {Д}{{\CYRD}}1 {Е}{{\CYRE}}1 {Ж}{{\CYRZH}}1 {З}{{\CYRZ}}1
+    {И}{{\CYRI}}1 {Й}{{\CYRISHRT}}1 {К}{{\CYRK}}1 {Л}{{\CYRL}}1
+    {М}{{\CYRM}}1 {Н}{{\CYRN}}1 {О}{{\CYRO}}1 {П}{{\CYRP}}1
+    {Р}{{\CYRR}}1 {С}{{\CYRS}}1 {Т}{{\CYRT}}1 {У}{{\CYRU}}1
+    {Ф}{{\CYRF}}1 {Х}{{\CYRH}}1 {Ц}{{\CYRC}}1 {Ч}{{\CYRCH}}1
+    {Ш}{{\CYRSH}}1 {Щ}{{\CYRSHCH}}1 {Ъ}{{\CYRHRDSN}}1 {Ы}{{\CYRERY}}1
+    {Ь}{{\CYRSFTSN}}1 {Э}{{\CYREREV}}1 {Ю}{{\CYRYU}}1 {Я}{{\CYRYA}}1
+}
+
+\lstset{style=codestyle}
+
+\begin{document}
+
+% ===== ТИТУЛЬНЫЙ ЛИСТ =====
+\begin{titlepage}
+    \begin{center}
+        Министерство науки и высшего образования Российской Федерации
+        
+        \vspace{0.7cm}
+        ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ
+        НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ ИТМО
+        
+        (Университет ИТМО)
+               
+        \vspace{3cm}
+        {ЛАБОРАТОРНАЯ РАБОТА №0}
+        
+        \vspace{0.3cm}
+        по дисциплине <<Машинное обучение>>
+        
+        \vspace{0.5cm}
+        {\Large Знакомство с системой контроля версий git и сервисом GitHub}
+        
+        \vspace{3cm}
+        \begin{flushright}
+            \begin{minipage}{0.48\textwidth}
+                \begin{flushleft}
+                    \textbf{Выполнила:} \\
+                    Забурдаева Екатерина Дмитриевна \\
+                    Группа R3335 \\
+                    Поток 1.3
+                
+                    \vspace{0.5cm}
+                    \textbf{Проверила:} \\
+                    Сениченкова Яна Олеговна
+                \end{flushleft}
+            \end{minipage}
+        \end{flushright}
+        
+        \vfill
+        Санкт-Петербург \\
+        2026
+    \end{center}
+\end{titlepage}
+
+% ===== ОГЛАВЛЕНИЕ =====
+\newpage
+\begingroup
+\setcounter{page}{2}
+\renewcommand{\contentsname}{}
+\begin{center}
+\Large\textbf{Содержание}
+\end{center}
+\vspace{1cm}
+\tableofcontents
+\endgroup
+
+% ===== ЗАДАНИЕ 1 =====
+\newpage
+\section{Задание 1. Цели и задачи на семестр}
+
+\textbf{Цель:} поразмышлять о своих целях и задачах на текущий семестр.
+
+\textbf{Ход выполнения:}
+\begin{enumerate}
+    \item С помощью веб-интерфейса GitHub создан файл \texttt{goals.md} в репозитории.
+    \item Используя язык разметки Markdown, созданы заголовки <<Мой опыт>> и <<Мои цели>>.
+    \item Написан абзац о своём опыте разработки программного обеспечения со ссылкой на профиль GitHub.
+    \item Создан нумерованный список целей.
+    \item Создан ненумерованный список задач.
+    \item Создана папка \texttt{resources}, в неё загружено изображение и добавлено в файл \texttt{goals.md}.
+    \item Все файлы закоммичены в репозиторий.
+\end{enumerate}
+
+\subsection{Содержимое файла \texttt{goals.md}}
+
+\begin{lstlisting}[language=Markdown, caption={Файл goals.md}, label=lst:goals]
+# Мой опыт
+
+Я пока только начинаю свой путь в разработке программного обеспечения. Раньше писала небольшие программы на Python в рамках учёбы, но с настоящими проектами и системами контроля версий почти не работала. Мой профиль на GitHub можно посмотреть по [этой ссылке](https://github.com/KateZaburdaeva).
+
+# Мои цели
+
+1. Разобраться, как анализировать данные и строить модели машинного обучения.
+2. Научиться пользоваться Git и GitHub так, чтобы это не вызывало трудностей.
+3. Понять, как работают нейронные сети, и попробовать обучить свою первую модель.
+
+## Задачи
+
+- Освоить основные команды Git: clone, add, commit, push.
+- Научиться загружать данные и обрабатывать их с помощью Python.
+- Понять, как оценивать качество модели классификации.
+- Изучить деревья решений и ансамбли на простых примерах.
+- Попробовать обучить небольшую нейронную сеть.
+- Регулярно делать коммиты и вести свой репозиторий в порядке.
+
+![Картинка](resources/photo.jpg)
+\end{lstlisting}
+
+В результате файл \texttt{goals.md} корректно отображается на GitHub: заголовки выделены, ссылка кликабельна, списки отформатированы, изображение из папки \texttt{resources} отображается.
+
+% ===== ЗАДАНИЕ 2 =====
+\newpage
+\section{Задание 2. Работа с git из командной строки}
+
+\textbf{Цель:} научиться использовать git из командной строки.
+
+\textbf{Ход выполнения:}
+\begin{enumerate}
+    \item Репозиторий клонирован на локальный компьютер командой \texttt{git clone}.
+    \item Создан файл \texttt{info.md}.
+    \item Выполнены команды \texttt{git add info.md}, \texttt{git commit}, \texttt{git push}.
+    \item Создана папка \texttt{data} с файлом \texttt{dataset.csv}.
+    \item Создан файл \texttt{.gitignore} со строкой \texttt{data/}.
+    \item Закоммичен \texttt{.gitignore}, выполнена попытка закоммитить \texttt{data/dataset.csv}.
+\end{enumerate}
+
+\subsection{Содержимое файла \texttt{info.md}}
+
+\begin{lstlisting}[language=Markdown, caption={Файл info.md}, label=lst:info]
+Забурдаева Екатерина Дмитриевна
+Windows 11
+11.09.1026 23:43
+\end{lstlisting}
+
+\subsection{Содержимое файла \texttt{.gitignore}}
+
+\begin{lstlisting}[language=Markdown, caption={Файл .gitignore}, label=lst:gitignore]
+data/
+\end{lstlisting}
+
+\subsection{Результат попытки закоммитить \texttt{data/dataset.csv}}
+
+При выполнении команды
+
+\begin{lstlisting}[language=bash, label=lst:add]
+git add data/dataset.csv
+\end{lstlisting}
+
+Git выдал следующее сообщение:
+
+\begin{lstlisting}[language=bash, label=lst:error]
+The following paths are ignored by one of your .gitignore files:
+data
+hint: Use -f if you really want to add them.
+hint: Disable this message with "git config advice.addIgnoredFile false"
+\end{lstlisting}
+
+Файл \texttt{data/dataset.csv} не был добавлен в репозиторий, потому что в файле \texttt{.gitignore} указана строка \texttt{data/}. Эта строка сообщает Git, что всю папку \texttt{data} и всё её содержимое нужно игнорировать. Git не отслеживает такие файлы, поэтому команда \texttt{git add} не добавляет их в индекс.
+
+Если бы файл всё-таки нужно было добавить, можно было бы использовать команду \texttt{git add -f data/dataset.csv}, где флаг \texttt{-f} означает принудительное добавление.
+
+Проверить, что файл действительно игнорируется, можно командой:
+
+\begin{lstlisting}[language=bash, label=lst:check]
+git check-ignore -v data/dataset.csv
+\end{lstlisting}
+
+Она выводит строку вида:
+
+\begin{lstlisting}[language=bash, label=lst:check-res]
+.gitignore:1:data/      data/dataset.csv
+\end{lstlisting}
+
+Это подтверждает, что игнорирование работает именно из-за строки \texttt{data/} в файле \texttt{.gitignore}.
+
+\section*{Ссылка на репозиторий}
+\url{https://github.com/KateZaburdaeva/ML_lab0}
+
+% ===== ВЫВОД =====
+\newpage
+\section*{Вывод}
+
+В ходе лабораторной работы я познакомилась с системой контроля версий Git и сервисом GitHub. Я научилась создавать и оформлять файлы через веб-интерфейс с помощью Markdown, работать с Git из командной строки (\texttt{clone}, \texttt{add}, \texttt{commit}, \texttt{push}), а также использовать файл \texttt{.gitignore} для исключения файлов из репозитория. Также подготовила отчёт с помощью Overleaf и загрузила его в репозиторий.
+
+\end{document}
